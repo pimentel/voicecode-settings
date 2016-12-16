@@ -6,6 +6,13 @@ Package.command 'rambo',
     @string " <- "
 
 # window management
+Package.command 'close-window',
+  spoken: 'totchway'
+  description: 'close all windows in application'
+  tags: ['window', 'navigation', 'user']
+  enabled: true
+  action: ->
+    @key 'w', 'command shift'
 Package.command 'application-window',
   spoken: 'appwin'
   enabled: true
