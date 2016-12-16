@@ -15,7 +15,7 @@ Package.command "atom-here",
   spoken: "atom here"
   description: "open an atom editor at this directory"
   tags: ["shell", "user"]
-  scopes: ['iterm-active']
+  scope: ['iterm-active']
   action: ->
     @string "atom ."
     @key "return"
@@ -146,6 +146,23 @@ Package.command "mux-vertical",
   action: ->
     @key "b", "control"
     @key "%"
+Package.command 'tmux-scroll',
+  spoken: "mux scroll"
+    description: "enter scroll mode in tmux"
+    tags: ["tmux", "user"]
+    scope: ['iterm-active']
+    action: ->
+      @key "b", "control"
+      @key "["
+Package.command 'tmux-leave',
+  spoken: "mux leave"
+  description: "leave a tmux session (leaving it open)"
+  tags: ["tmux", "user"]
+  scope: ['iterm-active']
+  action: ->
+    @key "b", "control"
+    @key 'd'
+
 Package.command 'secure-copy',
   spoken: 'secure copy'
   description: 'scp in the shell'
@@ -196,20 +213,6 @@ Package.command 'git-log-pretty',
   action: ->
     @string 'git lg'
     @key 'return'
-  # "mux leave":
-  #   description: "leave a tmux session (leaving it open)"
-  #   tags: ["tmux", "user", "domain-specific"]
-  #   triggerScopes: ['iTerm2', 'Terminal']
-  #   action: ->
-  #     @key "b", "control"
-  #     @key 'd'
-  # "mux scroll":
-  #   description: "enter scroll mode in tmux"
-  #   tags: ["tmux", "user", "domain-specific"]
-  #   triggerScopes: ["iTerm2", "Terminal"]
-  #   action: ->
-  #     @key "b", "control"
-  #     @key "["
 
 remoteHosts =
   "genetics": "genetics"
