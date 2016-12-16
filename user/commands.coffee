@@ -284,6 +284,112 @@ Package.command 'ordinal-number',
       text += mapping[remainder]
     @string text
 
+namesToSpell =
+  "wife": "puente"
+  "far": "faraz"
+  "hi": "haiyan"
+  "case": "kaisa"
+  "in": "innamaa"
+  "kyle": "lior"
+  "leroy": "lior"
+  "lyle": "lior"
+  "lori": "lorian"
+  "mel": "melsted"
+  "near": "nir"
+  "nebula": "nabila"
+  "paul": "pall"
+  "patch": "pachter"
+  "poison": "poisson"
+  "rib": "ribado"
+  "soon": "xuan"
+  "val": "vasilis"
+  "wang": "huang"
+  "y": "yang"
+  # mappings
+  berkeley: "uc berkeley"
+  "blood": "erythropoiesis"
+  "geo": "geuvadis"
+  "edge": "edger"
+  "bit": "bitseq"
+Package.command 'spell-name',
+  spoken: 'brand'
+  grammarType: 'custom'
+  description: "enter a name"
+  autoSpacing: 'normal normal'
+  multiPhraseAutoSpacing: 'normal normal'
+  rule: '<spoken> (name)?'
+  enabled: true
+  variables:
+    name: -> namesToSpell
+  action: ({name}) ->
+    if name?
+      @string name
+
+mathSymbols =
+  "eta": "eta"
+  "chai": "chi"
+  "try": "chi"
+  "c": "xi"
+  "see": "xi"
+  "lambda": "lambda"
+  "mu": "mu"
+  "row": "rho"
+  "sigh": "psi"
+  "tao": "tau"
+  "towel": "tau"
+  "theta": "theta"
+  "up": "upsilon"
+  "zeta": "zeta"
+  # these are generally helpful with latex, but aren't actually math specific
+  "page": "newpage"
+Package.command 'math-symbol',
+  spoken: "mathsim"
+  grammarType: 'custom'
+  description: "enter a name"
+  rule: '<spoken> (symbol)'
+  enabled: true
+  variables:
+    symbol: -> mathSymbols
+  action: ({symbol}) ->
+    if symbol?
+      @string symbol
+
+# Package.command 'python-virtual-3',
+
+properPunctuation =
+  "coffee": "CoffeeScript"
+  "cuff": "Cuffdiff 2"
+  "express": "eXpress"
+  "flexymike": "FlexyMike"
+  "iterm": "iTerm"
+  "javascript": "JavaScript"
+  "github": "GitHub"
+  "latex": "LaTeX"
+
+  # names
+_.each Settings["names"], (value, key) ->
+  properPunctuation[key] = value.charAt(0).toUpperCase() +
+    value.slice(1)
+
+# things that need to be overloaded from 'brand'
+properPunctuation["bit"] = "BitSeq"
+properPunctuation["edge"] = "edgeR"
+properPunctuation["geo"] = "GEUVADIS"
+properPunctuation['berkeley'] = 'UC Berkeley'
+Package.command 'spell-name-proper-punctuation',
+  spoken: 'spellman'
+  grammarType: 'custom'
+  description: "enter a name with proper punctuation"
+  autoSpacing: 'normal normal'
+  multiPhraseAutoSpacing: 'normal normal'
+  rule: '<spoken> (name)?'
+  enabled: true
+  variables:
+    name: -> properPunctuation
+  action: ({name}) ->
+    if name?
+      @string name
+
 # abstract implementations
 Package.implement
   'hp_abstract:insert-snakemake': ->

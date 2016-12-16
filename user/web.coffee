@@ -12,6 +12,7 @@ Settings.web =
     "facebook": "https://facebook.com"
     "face": "https://facebook.com"
     "get": "https://github.com/"
+    'gmail': 'https://mail.google.com'
     "kallisto": "https://github.com/pachterlab/kallisto"
     "patch": "https://github.com/pachterlab"
     "pimentel": "https://pimentel.github.io/"
