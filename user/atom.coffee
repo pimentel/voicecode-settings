@@ -27,3 +27,11 @@ Package.implement
   'hp_abstract:go-to-right-pane': ->
     @key 'k', 'command'
     @key 'right', 'command'
+
+  'hp_abstract:go-to-up-pane': ->
+    @key 'k', 'command'
+    @key 'up', 'command'
+
+  'hp_abstract:go-to-down-pane': ->
+    @key 'k', 'command'
+    @key 'down', 'command'

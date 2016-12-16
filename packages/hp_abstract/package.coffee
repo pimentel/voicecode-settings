@@ -9,10 +9,19 @@ pack.commands
     description: 'Go to left pane'
     enabled: true
     tags: ['window management', 'user']
-
   'go-to-right-pane':
     spoken: 'pain right'
     description: 'Go to right pane'
+    enabled: true
+    tags: ['window management', 'user']
+  'go-to-up-pane':
+    spoken: 'pain up'
+    description: 'Go to up pane'
+    enabled: true
+    tags: ['window management', 'user']
+  'go-to-down-pane':
+    spoken: 'pain down'
+    description: 'Go to down pane'
     enabled: true
     tags: ['window management', 'user']
 

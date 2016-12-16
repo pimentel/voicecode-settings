@@ -323,6 +323,13 @@ Package.implement
   'hp_abstract:go-to-right-pane': ->
     @key "b", "control"
     @key 'right'
+  'hp_abstract:go-to-up-pane': ->
+    @key "b", "control"
+    @key 'up'
+  'hp_abstract:go-to-down-pane': ->
+    @key "b", "control"
+    @key 'down'
+
   'hp_abstract:insert-xargs': ->
     @string 'xargs '
 

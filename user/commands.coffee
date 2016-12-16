@@ -59,6 +59,38 @@ Package.command 'snakefile',
   tags: ["words", "user"]
   action: ->
     @string "Snakefile"
+Package.command "osascript",
+  spoken: 'oshascript'
+  description: "insert 'osascript'"
+  tags: ["words", "user"]
+  action: ->
+    @string "osascript"
+Package.command 'pandoc',
+  spoken: "pan dock"
+  description: "insert 'pandoc'"
+  tags: ["words", "user"]
+  action: ->
+    @string "pandoc"
+Package.command 'seqtk',
+  spoken: "seek tk"
+  misspellings: ["ctk"]
+  tags: ["words", "user"]
+  description: "insert 'seqtk'"
+  action: ->
+    @string "seqtk"
+Package.command 'latexmk'
+  spoken: "latex make"
+  description: "insert 'latexmk'"
+  tags: ["words", "user"]
+  action: ->
+    @string "latexmk"
+Package.command 'nolint',
+  spoken: "nolint":
+  tags: ["snippets", "user"]
+  autoSpacing: "normal normal"
+  multiPhraseAutoSpacing: "normal normal"
+  action: ->
+    @string "# nolint"
 
 # inserting symbols
 Package.command 'space-ampersand-ampersand-space',
