@@ -1,8 +1,13 @@
 Events.on 'shouldStringBePasted', (shouldPaste) ->
-  if Scope.active('scope-name')
-    shouldPaste.yesNo = no
-    shouldPaste.continue = no
+  shouldPaste.yesNo = no
+  shouldPaste.continue = no
   shouldPaste
+
+# Events.on 'shouldStringBePasted', (shouldPaste) ->
+#   if Scope.active('scope-name')
+#     shouldPaste.yesNo = no
+#     shouldPaste.continue = no
+#   shouldPaste
 
 Settings.vocabulary =
   translations:
@@ -51,10 +56,10 @@ Settings.vocabulary =
     "hark 5": "h5"
     "hark five": "h5"
     "herald": "harold"
-    "hdf five": "hdf5"
-    "hdl five": "hdf5"
-    "hdr five": "hdf5"
-    "hds five": "hdf5"
+    # "hdf five": "hdf5"
+    # "hdl five": "hdf5"
+    # "hdr five": "hdf5"
+    # "hds five": "hdf5"
     "inter-": "inter"
     "intron's": "introns"
     "intron 's": "introns"
@@ -119,7 +124,6 @@ Settings.vocabulary =
     "g text": "GTEx"
   vocabularyAlternate:
     "E numb": "enum"
-    "H five": "h5"
     "kaymer": "kmer"
     "fast a": "fasta"
     "fast q": "fastq"
@@ -135,6 +139,9 @@ Settings.vocabulary =
     "convolutional"
     "flexymike"
     "frequentist"
+    'HHMI'
+    'H5'
+    'HDF5'
     'localhost'
     "neural network"
     "neural networks"
@@ -165,6 +172,7 @@ Settings.vocabulary =
     "smash hi sat"
     "smash gg plot"
     "single cell"
+    'voice code'
   ]
 names =
   'editor:extend-selection-to-line-number': 'selty'

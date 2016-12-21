@@ -9,3 +9,4 @@ Settings.modifiers =
     'mack': 'command control'
     'shay': 'command option'
     'triff': 'control shift'
+    'troll': 'control'

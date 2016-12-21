@@ -78,14 +78,14 @@ Package.command 'seqtk',
   description: "insert 'seqtk'"
   action: ->
     @string "seqtk"
-Package.command 'latexmk'
+Package.command 'latexmk',
   spoken: "latex make"
   description: "insert 'latexmk'"
   tags: ["words", "user"]
   action: ->
     @string "latexmk"
 Package.command 'nolint',
-  spoken: "nolint":
+  spoken: "nolint"
   tags: ["snippets", "user"]
   autoSpacing: "normal normal"
   multiPhraseAutoSpacing: "normal normal"

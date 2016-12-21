@@ -14,6 +14,7 @@ Package.command 'snakemake-dryrun',
 Package.command "atom-here",
   spoken: "atom here"
   description: "open an atom editor at this directory"
+  enabled: true
   tags: ["shell", "user"]
   scope: ['iterm-active']
   action: ->
@@ -148,12 +149,12 @@ Package.command "mux-vertical",
     @key "%"
 Package.command 'tmux-scroll',
   spoken: "mux scroll"
-    description: "enter scroll mode in tmux"
-    tags: ["tmux", "user"]
-    scope: ['iterm-active']
-    action: ->
-      @key "b", "control"
-      @key "["
+  description: "enter scroll mode in tmux"
+  tags: ["tmux", "user"]
+  scope: ['iterm-active']
+  action: ->
+    @key "b", "control"
+    @key "["
 Package.command 'tmux-leave',
   spoken: "mux leave"
   description: "leave a tmux session (leaving it open)"
