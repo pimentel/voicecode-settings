@@ -63,12 +63,14 @@ Package.command "osascript",
   spoken: 'oshascript'
   description: "insert 'osascript'"
   tags: ["words", "user"]
+  enabled: true
   action: ->
     @string "osascript"
 Package.command 'pandoc',
   spoken: "pan dock"
   description: "insert 'pandoc'"
   tags: ["words", "user"]
+  enabled: true
   action: ->
     @string "pandoc"
 Package.command 'seqtk',
@@ -76,12 +78,14 @@ Package.command 'seqtk',
   misspellings: ["ctk"]
   tags: ["words", "user"]
   description: "insert 'seqtk'"
+  enabled: true
   action: ->
     @string "seqtk"
 Package.command 'latexmk',
   spoken: "latex make"
   description: "insert 'latexmk'"
   tags: ["words", "user"]
+  enabled: true
   action: ->
     @string "latexmk"
 Package.command 'nolint',
@@ -89,6 +93,7 @@ Package.command 'nolint',
   tags: ["snippets", "user"]
   autoSpacing: "normal normal"
   multiPhraseAutoSpacing: "normal normal"
+  enabled: true
   action: ->
     @string "# nolint"
 
