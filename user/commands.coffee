@@ -396,7 +396,7 @@ Package.implement
     @string 'snakemake'
   'hp_abstract:open-shortcat': (input) ->
     @key ' ', 'shift command'
-    @delay(50)
+    @delay(200)
     if input?.length
       input = input.join(' ')
       @string input
