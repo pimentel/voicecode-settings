@@ -142,6 +142,7 @@ Settings.vocabulary =
     'HHMI'
     'H5'
     'HDF5'
+    'init'
     'localhost'
     "neural network"
     "neural networks"
@@ -162,6 +163,7 @@ Settings.vocabulary =
     "zotero"
     # combinations
     "champ thanks"
+    "champ thank"
     "fold change"
     "nerb row"
     "row names"
@@ -179,10 +181,11 @@ names =
   'cursor:word-right': 'fran'
   'cursor:word-left': 'peg'
   'cursor:left': 'lloyd'
+  'core:insert-command-id': 'sherlock holmes'
 
 _.each names, (spoken, id) -> Commands.changeSpoken id, spoken
 
-homonyms = Packages.get('homonyms').homonyms
-homonyms.values.push ["atom", "adam"]
-homonyms.values.push ['atac', 'attack']
-homonyms.initialize()
+# homonyms = Packages.get('homonyms').homonyms
+# homonyms.values.push ["atom", "adam"]
+# homonyms.values.push ['atac', 'attack']
+# homonyms.initialize()

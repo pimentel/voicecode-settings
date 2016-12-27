@@ -151,6 +151,7 @@ Package.command 'tmux-scroll',
   spoken: "mux scroll"
   description: "enter scroll mode in tmux"
   tags: ["tmux", "user"]
+  enabled: true
   scope: ['iterm-active']
   action: ->
     @key "b", "control"
@@ -159,6 +160,7 @@ Package.command 'tmux-leave',
   spoken: "mux leave"
   description: "leave a tmux session (leaving it open)"
   tags: ["tmux", "user"]
+  enabled: true
   scope: ['iterm-active']
   action: ->
     @key "b", "control"

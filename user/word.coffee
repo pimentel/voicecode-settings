@@ -4,6 +4,7 @@ Scope.register
 
 Package.command 'add-citation',
   spoken: 'add citation'
+  enabled: true
   description: "add citation using Zotero"
   tags: ["microsoft word", "user"]
   scope: ["word-active"]
@@ -17,6 +18,7 @@ Package.implement
     @key 'g', 'command option'
     if input > 0
       @delay 500
-      @delay input
+      @string input
       @delay 500
       @key 'return'
+      @key 'escape'

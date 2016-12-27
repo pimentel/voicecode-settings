@@ -2,6 +2,7 @@
 Settings.insert =
   abbreviations:
     "archive": "arXiv"
+    'avenue': 'Ave.'
     "at all": "et al."
     "auxiliary": "aux"
     "background": "bkgnd"
