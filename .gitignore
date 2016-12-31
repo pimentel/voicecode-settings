@@ -2,4 +2,9 @@ settings.coffee
 */private.coffee
 packages/*
 
+atom/*
+cyberduck/*
+fetch/*
+ftp/*
+generated/*
 !packages/hp_abstract/*
