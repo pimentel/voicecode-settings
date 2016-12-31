@@ -185,7 +185,18 @@ names =
 
 _.each names, (spoken, id) -> Commands.changeSpoken id, spoken
 
-# homonyms = Packages.get('homonyms').homonyms
-# homonyms.values.push ["atom", "adam"]
-# homonyms.values.push ['atac', 'attack']
-# homonyms.initialize()
+userHomonyms = [
+	["8", "ate"],
+  ['atom', 'adam'],
+  ['atac', 'attack'],
+  ["accession", "a session"],
+  ["layer", "lair"],
+  ["linter", "winter"]
+  ['poisson', 'poison'],
+  ["scab", "sccab"],
+]
+
+homonyms = Packages.get('homonyms').homonyms
+for pair in userHomonyms
+  homonyms.values.push(pair)
+homonyms.initialize()

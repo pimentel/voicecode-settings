@@ -10,7 +10,9 @@ Settings.application =
     dog: "Fetch"
     "spread": "Microsoft Excel"
     keynote: "Keynote"
-    "script editor": "Script Editor"
+    "self control": 'SelfControl'
+    "self-control": 'SelfControl'
+    "script": "Script Editor"
     "latex": "LaTeXiT"
     "private": "Private Internet Access"
     skim: "Skim"

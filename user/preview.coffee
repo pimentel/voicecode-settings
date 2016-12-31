@@ -8,7 +8,7 @@ Package.implement
   'editor:move-to-line-number': (input) ->
     @key 'g', 'command option'
     if input > 0
-      @delay 200
+      @delay 300
       @delay input
-      @delay 100
+      @delay 200
       @key 'return'

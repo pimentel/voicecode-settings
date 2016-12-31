@@ -294,6 +294,8 @@ namesToSpell =
   "far": "faraz"
   "hi": "haiyan"
   "case": "kaisa"
+  'crisper': 'crispr'
+  'cass': 'cas9'
   "in": "innamaa"
   "kyle": "lior"
   "leroy": "lior"
@@ -372,15 +374,17 @@ properPunctuation =
   "latex": "LaTeX"
 
   # names
-_.each Settings["names"], (value, key) ->
+_.each namesToSpell, (value, key) ->
   properPunctuation[key] = value.charAt(0).toUpperCase() +
     value.slice(1)
 
 # things that need to be overloaded from 'brand'
-properPunctuation["bit"] = "BitSeq"
+properPunctuation['berkeley'] = 'UC Berkeley'
+properPunctuation['bit'] = "BitSeq"
+properPunctuation['cass'] = 'Cas9'
+properPunctuation['crisper'] = 'CRISPR'
 properPunctuation["edge"] = "edgeR"
 properPunctuation["geo"] = "GEUVADIS"
-properPunctuation['berkeley'] = 'UC Berkeley'
 Package.command 'spell-name-proper-punctuation',
   spoken: 'spellman'
   grammarType: 'custom'

@@ -11,6 +11,11 @@ Package.command 'add-citation',
   action: ->
     @key "a", "control option"
 
+runVisualBasic = (whichScript, application = "Microsoft Word") ->
+  text = "tell application \"#{application}\" to run VB macro macro name \"#{whichScript}\""
+  console.log text
+  Actions.applescript text
+
 Package.implement
   scope: 'word-active'
 ,
@@ -22,3 +27,15 @@ Package.implement
       @delay 500
       @key 'return'
       @key 'escape'
+  'cursor:way-down': ->
+    runVisualBasic 'EndOfDocument'
+  'cursor:way-up': ->
+    runVisualBasic 'StartOfDocument'
+  'common:zoom-in': ->
+    runVisualBasic 'ViewZoomIn'
+  'common:zoom-out': ->
+    runVisualBasic 'ViewZoomOut'
+  'common:indent-right': ->
+    runVisualBasic 'IncreaseIndent'
+  'common:indent-left': ->
+    runVisualBasic 'DecreaseIndent'
