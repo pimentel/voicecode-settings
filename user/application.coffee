@@ -5,6 +5,7 @@ Settings.application =
     activity: "Activity Monitor"
     acrobat: "Adobe Acrobat Reader DC"
     arduino: "Arduino"
+    curb: "Kerberos Commander"
     disc: "Disk Utility"
     duck: "Cyberduck"
     dog: "Fetch"

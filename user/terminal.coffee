@@ -274,7 +274,7 @@ Settings['command-line'] =
     "said": "sed "
     "grep": "grep "
     "hawk": "awk "
-    "make": "mkdir "
+    "make": "mkdir -p "
     "touch": "touch "
     "special sink": "rsync -ravh"
     "long": "ls -lh "
@@ -286,3 +286,4 @@ Settings['command-line'] =
     "tar": "tar -cvvf "
     "untar": "tar -xf "
     "usage": "du -sh "
+    'voice': 'rc /tmp/repl/voicecode_production.sock'

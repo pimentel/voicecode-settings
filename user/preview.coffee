@@ -9,6 +9,6 @@ Package.implement
     @key 'g', 'command option'
     if input > 0
       @delay 300
-      @delay input
+      @string input
       @delay 200
       @key 'return'

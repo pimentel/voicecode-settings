@@ -39,3 +39,8 @@ Package.implement
     runVisualBasic 'IncreaseIndent'
   'common:indent-left': ->
     runVisualBasic 'DecreaseIndent'
+  'delete:lines': ({first, last} = {}) ->
+    @do 'cursor:way-right'
+    @do 'selection:way-left'
+    @do 'common:delete'
+  # 'common:find': (input) ->

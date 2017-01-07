@@ -6,9 +6,7 @@ Package.implement
   scope: 'vlc'
 ,
   'editor:move-to-line-number': (input) ->
-    @key 'j', 'command'
     if input > 0
-      @delay 200
-      @string input
-      @delay 100
-      @key 'return'
+      @applescript "tell application \"VLC\" to set the current time to #{input}"
+    else
+      @key 'j', 'command'

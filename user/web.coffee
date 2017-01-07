@@ -22,5 +22,6 @@ Settings.web =
     "sleuth": "https://github.com/pachterlab/sleuth"
     "trello": "https://trello.com/"
     "twitter": "https://twitter.com"
+    'voice': 'http://voicecode.io/docs'
     "whether": "http://www.weather.com/weather/hourbyhour/l/94402"
     "yelp": "https://yelp.com"

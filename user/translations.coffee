@@ -3,12 +3,6 @@ Events.on 'shouldStringBePasted', (shouldPaste) ->
   shouldPaste.continue = no
   shouldPaste
 
-# Events.on 'shouldStringBePasted', (shouldPaste) ->
-#   if Scope.active('scope-name')
-#     shouldPaste.yesNo = no
-#     shouldPaste.continue = no
-#   shouldPaste
-
 Settings.vocabulary =
   translations:
     "a session": "accession"
@@ -18,7 +12,6 @@ Settings.vocabulary =
     "breland": "Brielin"
     "bottomley": "bottomly"
     "ten x": "10X"
-    # "arnie": "rna"
     "anti-": "anti"
     "multi-": "multi"
     "non-": "non"
@@ -105,6 +98,7 @@ Settings.vocabulary =
     "winters": "linters"
     "winter": "linter"
     "whistle": "width"
+    "yo-yo": "yo"
     "zug": "souk"
     # biology specific
     "chip sequencing": "ChIP-Seq"
@@ -144,6 +138,7 @@ Settings.vocabulary =
     'HDF5'
     'init'
     'localhost'
+    'NCBI'
     "neural network"
     "neural networks"
     'node'
@@ -158,6 +153,7 @@ Settings.vocabulary =
     'vectorize'
     "voom"
     'wald'
+    'yo'
     "viglink"
     "emoji"
     "zotero"
@@ -182,6 +178,8 @@ names =
   'cursor:word-left': 'peg'
   'cursor:left': 'lloyd'
   'core:insert-command-id': 'sherlock holmes'
+  'symbols:surround-parentheses': 'layp'
+  'application:open-finder': 'faindor'
 
 _.each names, (spoken, id) -> Commands.changeSpoken id, spoken
 
@@ -196,7 +194,9 @@ userHomonyms = [
   ["scab", "sccab"],
 ]
 
-homonyms = Packages.get('homonyms').homonyms
-for pair in userHomonyms
-  homonyms.values.push(pair)
-homonyms.initialize()
+pack = Packages.get('homonyms')
+pack.defer ->
+  homonyms = Packages.get('homonyms').homonyms
+  for pair in userHomonyms
+    homonyms.values.push(pair)
+  homonyms.initialize()

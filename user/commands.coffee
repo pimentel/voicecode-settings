@@ -5,6 +5,14 @@ Package.command 'rambo',
   action: ->
     @string " <- "
 
+Package.command 'shift-return',
+  spoken: 'sky shock'
+  enabled: true
+  description: "press 'shift-return'"
+  tags: ['keys', 'user']
+  action: ->
+    @key 'return', 'shift'
+
 # window management
 Package.command 'close-window',
   spoken: 'totchway'
@@ -16,6 +24,7 @@ Package.command 'close-window',
 Package.command 'application-window',
   spoken: 'appwin'
   enabled: true
+  misspellings: ['appling']
   action: ->
     @key 'f3'
 Package.command 'hyper-left',
@@ -180,6 +189,13 @@ Package.command 'backtick-backtick',
   action: ->
     @string "``"
     @key "left"
+Package.command 'sleep-screensaver',
+  spoken: 'screen and snore'
+  tags: ['power', 'user']
+  enabled: true
+  action: ->
+    @do 'dragon_darwin:microphone-sleep'
+    @applescript 'tell application "System Events" to start current screen saver'
 
 Package.command "comment-block",
   spoken: 'comment block'
