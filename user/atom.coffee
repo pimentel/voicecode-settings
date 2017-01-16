@@ -16,6 +16,24 @@ Package.command "calldown",
   scope: ['atom-editor-focused']
   action: ->
     @key "down", "control shift"
+Package.command 'pane-open-vertical',
+  spoken: 'pain vertical'
+  description: 'open a vertical pane'
+  enabled: true
+  tags: ['atom', 'user']
+  scope: ['atom-editor-focused']
+  action: ->
+    @key 'k', 'command'
+    @key 'right'
+Package.command 'pane-open-horizontal',
+  spoken: 'pain horizontal'
+  description: 'open a horizontal pane'
+  enabled: true
+  tags: ['atom', 'user']
+  scope: ['atom-editor-focused']
+  action: ->
+    @key 'k', 'command'
+    @key 'down'
 
 Package.implement
   scope: 'atom-editor-focused'

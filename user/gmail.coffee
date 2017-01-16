@@ -1,6 +1,6 @@
-gmail = Packages.get 'gmail'
+pack = Packages.get 'gmail'
 
-gmail.command 'go-label',
+pack.command 'go-label',
   spoken: 'go label'
   enabled: true
   continuous: false

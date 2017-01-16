@@ -15,6 +15,7 @@ Settings.web =
     'github': "https://github.com/"
     'gmail': 'https://mail.google.com'
     "kallisto": "https://github.com/pachterlab/kallisto"
+    medium: 'https://medium.com'
     "patch": "https://github.com/pachterlab"
     "pimentel": "https://pimentel.github.io/"
     "read it": "https://www.reddit.com/"
@@ -25,3 +26,4 @@ Settings.web =
     'voice': 'http://voicecode.io/docs'
     "whether": "http://www.weather.com/weather/hourbyhour/l/94402"
     "yelp": "https://yelp.com"
+    youtube: 'https://youtube.com'

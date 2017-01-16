@@ -5,6 +5,7 @@ Settings.application =
     activity: "Activity Monitor"
     acrobat: "Adobe Acrobat Reader DC"
     arduino: "Arduino"
+    airport: 'Airport Utility'
     curb: "Kerberos Commander"
     disc: "Disk Utility"
     duck: "Cyberduck"
@@ -18,6 +19,7 @@ Settings.application =
     "private": "Private Internet Access"
     skim: "Skim"
     studio: "RStudio"
+    time: 'Time Out'
     transmission: "Transmission"
     video: "vlc"
     word: "Microsoft Word"
@@ -25,6 +27,7 @@ Settings.application =
   firstNameBasis:
     madame: 'Atom'
     chromie: 'Google Chrome'
+    faindor: 'Finder'
     termite: "iTerm"
     saffron: "Safari"
     slacker: "Slack"

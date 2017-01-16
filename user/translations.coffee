@@ -40,6 +40,7 @@ Settings.vocabulary =
    # frequently misrecognized
     "debrown": " de Bruijn"
     "e-mail": "email"
+    "e-mails": "emails"
     "fast a": "fasta"
     "fast q": "fastq"
     "fast cue": "fastq"
@@ -65,7 +66,7 @@ Settings.vocabulary =
     "jetter": "gitter"
     "kaymer": "kmer"
     "les": "less"
-    "lottie": "laddie"
+    'lima': 'limma'
     "look see": "looksie"
     "lewis": "loess"
     "lois": "loess"
@@ -130,6 +131,7 @@ Settings.vocabulary =
 Settings.vocabulary =
   vocabulary: [
     "bayes"
+    'computationalist'
     "convolutional"
     "flexymike"
     "frequentist"
@@ -137,6 +139,7 @@ Settings.vocabulary =
     'H5'
     'HDF5'
     'init'
+    'illumina'
     'localhost'
     'NCBI'
     "neural network"
@@ -179,7 +182,7 @@ names =
   'cursor:left': 'lloyd'
   'core:insert-command-id': 'sherlock holmes'
   'symbols:surround-parentheses': 'layp'
-  'application:open-finder': 'faindor'
+  # 'application:open-finder': 'faindor'
 
 _.each names, (spoken, id) -> Commands.changeSpoken id, spoken
 
@@ -194,9 +197,15 @@ userHomonyms = [
   ["scab", "sccab"],
 ]
 
-pack = Packages.get('homonyms')
-pack.defer ->
-  homonyms = Packages.get('homonyms').homonyms
-  for pair in userHomonyms
-    homonyms.values.push(pair)
-  homonyms.initialize()
+homonyms = Packages.get('homonyms').homonyms
+if homonyms
+	for pair in userHomonyms
+	  homonyms.values.push(pair)
+	homonyms.initialize()
+else
+	pack = Packages.get('homonyms')
+	pack.defer ->
+		homonyms = Packages.get('homonyms').homonyms
+		for pair in userHomonyms
+		  homonyms.values.push(pair)
+		homonyms.initialize()

@@ -43,4 +43,11 @@ Package.implement
     @do 'cursor:way-right'
     @do 'selection:way-left'
     @do 'common:delete'
-  # 'common:find': (input) ->
+  'selection:next-occurrence': (input) ->
+    @key 'f', 'command'
+    @string input.value
+    @key 'return'
+  'selection:previous-occurrence': (input) ->
+    @key 'f', 'command'
+    @string input.value
+    @key 'g', 'command shift'
