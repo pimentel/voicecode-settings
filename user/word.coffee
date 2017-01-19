@@ -20,13 +20,13 @@ Package.implement
   scope: 'word-active'
 ,
   'editor:move-to-line-number': (input) ->
-    @key 'g', 'command option'
-    if input > 0
-      @delay 500
-      @string input
-      @delay 500
-      @key 'return'
-      @key 'escape'
+    cmd = """
+    tell application "Microsoft Word"
+    	set textObject to text object of selection
+    	navigate textObject position absolute count #{input} to goto a line item
+    end tell
+    """
+    @applescript cmd
   'cursor:way-down': ->
     runVisualBasic 'EndOfDocument'
   'cursor:way-up': ->
@@ -44,10 +44,22 @@ Package.implement
     @do 'selection:way-left'
     @do 'common:delete'
   'selection:next-occurrence': (input) ->
-    @key 'f', 'command'
-    @string input.value
-    @key 'return'
+    cmd = """
+    tell application "Microsoft Word"
+  	set findRange to find object of selection
+    	tell findRange
+    		execute find find text "#{input.value}" with match forward
+    	end tell
+    end tell
+    """
+    @applescript cmd
   'selection:previous-occurrence': (input) ->
-    @key 'f', 'command'
-    @string input.value
-    @key 'g', 'command shift'
+    cmd = """
+    tell application "Microsoft Word"
+  	set findRange to find object of selection
+    	tell findRange
+    		execute find find text "#{input.value}" without match forward
+    	end tell
+    end tell
+    """
+    @applescript cmd

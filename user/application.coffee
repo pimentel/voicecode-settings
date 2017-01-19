@@ -25,7 +25,7 @@ Settings.application =
     word: "Microsoft Word"
     zotero: "Zotero"
   firstNameBasis:
-    madame: 'Atom'
+    # madame: 'Atom'
     chromie: 'Google Chrome'
     faindor: 'Finder'
     termite: "iTerm"
@@ -33,3 +33,9 @@ Settings.application =
     slacker: "Slack"
     roman: "R"
     masseuse: "Messages"
+
+Package.command 'open-atom',
+  spoken: 'madame'
+  enabled: true
+  action: ->
+    @exec 'open -a Atom'
