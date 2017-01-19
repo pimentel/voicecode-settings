@@ -46,8 +46,7 @@ Package.implement
   'selection:next-occurrence': (input) ->
     cmd = """
     tell application "Microsoft Word"
-  	set findRange to find object of selection
-    	tell findRange
+    	tell find object of selection
     		execute find find text "#{input.value}" with match forward
     	end tell
     end tell
@@ -56,8 +55,7 @@ Package.implement
   'selection:previous-occurrence': (input) ->
     cmd = """
     tell application "Microsoft Word"
-  	set findRange to find object of selection
-    	tell findRange
+    	tell find object of selection
     		execute find find text "#{input.value}" without match forward
     	end tell
     end tell
