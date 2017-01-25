@@ -7,6 +7,7 @@ Settings.application =
     arduino: "Arduino"
     airport: 'Airport Utility'
     curb: "Kerberos Commander"
+    debug: "Script Debugger"
     disc: "Disk Utility"
     duck: "Cyberduck"
     dog: "Fetch"

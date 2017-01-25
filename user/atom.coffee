@@ -1,3 +1,11 @@
+# temporary command
+Package.command 'connect',
+  spoken: 'connector'
+  enabled: true
+  action: ->
+    @do 'common:find'
+    @do 'common:escape'
+
 Package.command 'column-up',
   spoken: 'callup'
   description: "column selection up in atom (pronounced 'cal-up')"

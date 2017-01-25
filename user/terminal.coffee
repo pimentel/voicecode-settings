@@ -264,6 +264,7 @@ Package.implement
 
 Settings['command-line'] =
   shellCommands:
+    'bib': 'bibtex'
     'change': 'cd '
     'up': 'cd ..'
     "socks proxy": "ssh -D localhost:2020 "
