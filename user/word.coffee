@@ -7,6 +7,9 @@ runVisualBasic = (whichScript, application = "Microsoft Word") ->
   console.log text
   Actions.applescript text
 
+Package.settings =
+  'moveMode': 'line'
+
 Package.command 'add-citation',
   spoken: 'add citation'
   enabled: true
@@ -15,6 +18,22 @@ Package.command 'add-citation',
   scope: ["word-active"]
   action: ->
     runVisualBasic 'ZoteroInsertCitation'
+Package.command 'change-move-mode-page',
+  spoken: 'page mode'
+  enabled: true
+  description: 'scroll by page in Microsoft Word'
+  tags: ['microsoft word', 'user']
+  scope: ['word-active']
+  action: ->
+    Package.settings.moveMode = 'page'
+Package.command 'change-move-mode-line',
+  spoken: 'line mode'
+  enabled: true
+  description: 'scroll by page in Microsoft Word'
+  tags: ['microsoft word']
+  scope: ['word-active']
+  action: ->
+    Package.settings.moveMode = 'line'
 
 Package.implement
   scope: 'word-active'
@@ -23,7 +42,7 @@ Package.implement
     cmd = """
     tell application "Microsoft Word"
     	set textObject to text object of selection
-    	navigate textObject position absolute count #{input} to goto a line item
+    	navigate textObject position absolute count #{input} to goto a #{Package.settings.moveMode} item
     end tell
     """
     @applescript cmd
@@ -99,6 +118,93 @@ Package.implement
     tell application "Microsoft Word"
     	set textObject to text object of selection
     	paste and format textObject type format plain text
+    end tell
+    """
+    @applescript cmd
+
+  'selection:next-word': (input) ->
+    if not input?
+      cmd = """
+      tell application "Microsoft Word"
+        -- clear the selection
+      	set selection start of selection to selection end of selection
+      end tell
+      """
+      @applescript cmd
+      @key 'right', 'option shift'
+
+    else
+      input = input - 1
+      cmd = """
+      tell application "Microsoft Word"
+        -- clear the selection
+      	set selection start of selection to selection end of selection
+        set textObject to text object of selection
+      	set newPosition to move start of range textObject by a word item count #{input}
+        set theResult to expand selection by a word item
+      end tell
+      """
+      @applescript cmd
+  'selection:previous-word': (input) ->
+    if not input?
+      cmd = """
+      tell application "Microsoft Word"
+        -- clear the selection
+      	set selection end of selection to selection start of selection
+      end tell
+      """
+      @applescript cmd
+      @key 'left', 'option shift'
+    else
+      input = -input
+      cmd = """
+      tell application "Microsoft Word"
+        -- clear the selection
+        set selection end of selection to selection start of selection
+        set textObject to text object of selection
+      	set newPosition to move end of range textObject by a word item count #{input}
+        set theResult to expand selection by a word item
+      end tell
+      """
+      @applescript cmd
+
+  'selection:way-up': ->
+    cmd = """
+    tell application "Microsoft Word"
+    	set selection start of selection to 0
+    end tell
+    """
+    @applescript cmd
+  'selection:way-down': ->
+    cmd = """
+    tell application "Microsoft Word"
+    	set storyRange to get story range of (document of active window) story type main text story
+    	set selection end of selection to end of content of storyRange
+    end tell
+    """
+    @applescript cmd
+
+  'selection:next-selection-occurrence': ->
+    cmd = """
+    tell application "Microsoft Word"
+    	set selectionType to selection type of selection
+    	if selectionType is selection normal then
+    		tell find object of selection
+    			execute find find text content of selection with match forward
+    		end tell
+    	end if
+    end tell
+    """
+    @applescript cmd
+  'selection:previous-selection-occurrence': ->
+    cmd = """
+    tell application "Microsoft Word"
+    	set selectionType to selection type of selection
+    	if selectionType is selection normal then
+    		tell find object of selection
+    			execute find find text content of selection without match forward
+    		end tell
+    	end if
     end tell
     """
     @applescript cmd
