@@ -1,7 +1,7 @@
-# Events.on 'shouldStringBePasted', (shouldPaste) ->
-#   shouldPaste.yesNo = no
-#   shouldPaste.continue = no
-#   shouldPaste
+Events.on 'shouldStringBePasted', (shouldPaste) ->
+  shouldPaste.yesNo = no
+  shouldPaste.continue = no
+  shouldPaste
 
 Settings.vocabulary =
   translations:
@@ -12,6 +12,7 @@ Settings.vocabulary =
     "breland": "Brielin"
     "bottomley": "bottomly"
     "ten x": "10X"
+    'arnie': 'rna'
     "anti-": "anti"
     "multi-": "multi"
     "non-": "non"
@@ -54,9 +55,9 @@ Settings.vocabulary =
     # "hdl five": "hdf5"
     # "hdr five": "hdf5"
     # "hds five": "hdf5"
+    "intron 's": "introns"
     "inter-": "inter"
     "intron's": "introns"
-    "intron 's": "introns"
     "ice a form": "isoform"
     "i'd": "I'd"
     "i've": "I've"
@@ -195,6 +196,8 @@ userHomonyms = [
   ["linter", "winter"]
   ['poisson', 'poison'],
   ["scab", "sccab"],
+  ["shirley", "surely"]
+  ['seq', 'seek']
 ]
 
 homonyms = Packages.get('homonyms').homonyms
@@ -209,3 +212,11 @@ else
 		for pair in userHomonyms
 		  homonyms.values.push(pair)
 		homonyms.initialize()
+
+misspellings =
+  'symbols:comma-space': ['swype']
+  'symbols:exclamation': ['clemmer']
+  'format:dot-sentance': ['dotson']
+
+_.each misspellings, (alternate, id) ->
+  Commands.addMisspellings id, alternate

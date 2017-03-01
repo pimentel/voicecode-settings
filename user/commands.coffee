@@ -310,6 +310,7 @@ namesToSpell =
   "far": "faraz"
   "hi": "haiyan"
   "case": "kaisa"
+  "chris": "christelle"
   'crisper': 'crispr'
   'cass': 'cas9'
   "in": "innamaa"
@@ -340,13 +341,13 @@ Package.command 'spell-name',
   description: "enter a name"
   autoSpacing: 'normal normal'
   multiPhraseAutoSpacing: 'normal normal'
-  rule: '<spoken> (name)?'
+  rule: '<spoken> (personName)?'
   enabled: true
   variables:
-    name: -> namesToSpell
-  action: ({name}) ->
-    if name?
-      @string name
+    personName: -> namesToSpell
+  action: ({personName}) ->
+    if personName?
+      @string personName
 
 mathSymbols =
   "eta": "eta"
@@ -407,13 +408,13 @@ Package.command 'spell-name-proper-punctuation',
   description: "enter a name with proper punctuation"
   autoSpacing: 'normal normal'
   multiPhraseAutoSpacing: 'normal normal'
-  rule: '<spoken> (name)?'
+  rule: '<spoken> (properName)?'
   enabled: true
   variables:
-    name: -> properPunctuation
-  action: ({name}) ->
-    if name?
-      @string name
+    properName: -> properPunctuation
+  action: ({properName}) ->
+    if properName?
+      @string properName
 
 # abstract implementations
 Package.implement

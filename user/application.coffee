@@ -6,6 +6,7 @@ Settings.application =
     acrobat: "Adobe Acrobat Reader DC"
     arduino: "Arduino"
     airport: 'Airport Utility'
+    cisco: 'Cisco AnyConnect Secure Mobility Client'
     curb: "Kerberos Commander"
     debug: "Script Debugger"
     disc: "Disk Utility"
@@ -13,8 +14,10 @@ Settings.application =
     dog: "Fetch"
     "spread": "Microsoft Excel"
     keynote: "Keynote"
+    power: "Microsoft Powerpoint"
     "self control": 'SelfControl'
     "self-control": 'SelfControl'
+    smart: 'SmartNav'
     "script": "Script Editor"
     "latex": "LaTeXiT"
     "private": "Private Internet Access"
@@ -40,3 +43,6 @@ Package.command 'open-atom',
   enabled: true
   action: ->
     @exec 'open -a Atom'
+    @delay 100
+    @do 'common:find'
+    @do 'common:escape'

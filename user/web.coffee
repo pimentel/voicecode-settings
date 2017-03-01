@@ -15,6 +15,7 @@ Settings.web =
     'github': "https://github.com/"
     'gmail': 'https://mail.google.com'
     "kallisto": "https://github.com/pachterlab/kallisto"
+    maps: 'https://maps.google.com'
     medium: 'https://medium.com'
     "patch": "https://github.com/pachterlab"
     "pimentel": "https://pimentel.github.io/"
